@@ -49,6 +49,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pickup"))
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
+
     void OnCollisionEnter(Collision collision)
     {
         // Check if the player has landed on the ground
